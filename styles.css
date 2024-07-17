@@ -1,0 +1,372 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #808080;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+header .logo {
+    font-size: 1.5em;
+}
+
+header nav {
+    position: relative;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+header .nav-links.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    flex-direction: column;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .nav-links li a.cta {
+    background-color: #ff0000;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+header .mobile-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+header .mobile-menu span {
+    background-color: #fff;
+    height: 2px;
+    width: 25px;
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    header .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    header .mobile-menu {
+        display: flex;
+    }
+}
+
+.hero {
+    background-image: url('pizza-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.hero .btn-primary, .hero .btn-secondary {
+    display: inline-block;
+    padding: 1em 2em;
+    margin: 1em 0.5em;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    cursor: pointer;
+}
+.delivery-info {
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.delivery-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.delivery-info .info {
+    line-height: 1.6;
+}
+
+
+.hero .btn-primary {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.hero .btn-secondary {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.about, .menu, .special-offers, .ordering-process, .location-delivery, footer {
+    padding: 2em;
+    text-align: center;
+}
+.special-offers, .ordering-process{
+    background-color: #808080;
+}
+
+.gallery img {
+    max-width: 100%;
+    margin: 1em 0;
+}
+
+.testimonials {
+    background: #f8f8f8;
+    padding: 1em;
+    border-radius: 5px;
+    margin: 2em 0;
+}
+
+.testimonials p {
+    font-style: italic;
+}
+
+.featured-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.featured-items .item {
+    max-width: 200px;
+    text-align: center;
+}
+
+.featured-items .item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.steps .step {
+    max-width: 150px;
+    text-align: center;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    background: url('map-placeholder.png') no-repeat center center;
+    background-size: cover;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+}
+
+footer .quick-links, footer .social-media, footer .newsletter {
+    margin: 1em 0;
+}
+
+footer .quick-links a, footer .social-media a {
+    color: #fff;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+footer .newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+footer .newsletter input {
+    padding: 0.5em;
+    border: none;
+}
+
+footer .newsletter button {
+    padding: 0.5em;
+    background-color: #ff0000;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.ll{
+    background-color: #808080;
+}
+.lll{
+    background-color: #808080;
+}
+.menu {
+    text-align: center;
+    padding: 2em 0;
+    background-color: #808080;
+}
+
+.menu h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.menu-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.category-btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.category-btn:hover {
+    background-color: #cc0000;
+}
+
+.menu-category {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.menu-category.active {
+    display: flex;
+}
+
+.item {
+    max-width: 200px;
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-weight: bold;
+    margin-top: 0.5em;
+    color: #ff0000;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 2em;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+.popup button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    margin-top: 1em;
+}

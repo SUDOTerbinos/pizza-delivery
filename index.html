@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SUDOPizza</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#order" class="cta">Order Now</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>The Best Pizza in Town, Delivered to Your Doorstep!</h1>
+            <p>Fresh Ingredients, Authentic Taste, Fast Delivery.</p>
+            <a href="#order" id="orderNow" class="btn-primary">Order Now</a>
+            <div id="comingSoonModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <p>Coming Soon!</p>
+                </div>
+            </div>
+            
+            <a href="#menu" class="btn-secondary">View Menu</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="ll">
+        <h2>About Us</h2>
+        <p>Our story...</p>
+        <p>Welcome to Pizza Heaven, where every slice tells a story of passion, tradition, and the joy of sharing a meal with loved ones.
+
+            From Humble Beginnings
+            Our journey began in a small, rustic kitchen in the heart of Sheger city. Founded by Terbinos Abebe, a passionate chef with a dream, Pizza Heaven started as a local favorite, known for its authentic recipes and warm, inviting atmosphere. Terbinos Abebe spent years perfecting the art of pizza making, traveling across Italy to learn from the masters and bring back the secrets of true Italian pizza.
+            
+            The Magic of Fresh Ingredients
+            At Pizza Heaven, we believe that the best pizzas start with the best ingredients. Every morning, our team selects the freshest vegetables, the finest cheeses, and the highest quality meats to ensure that every bite is a burst of flavor. Our dough is handmade daily, allowed to rise slowly for a perfectly crisp yet chewy crust, and our sauces are simmered to perfection with a blend of secret spices.
+            
+            A Community Favorite
+            Over the years, Pizza Heaven has grown from a small pizzeria into a beloved community hub. We've hosted countless birthday parties, family gatherings, and celebrations, becoming a cherished part of our customers' lives. Our walls are adorned with photos and memories of happy moments shared over our pizzas, and our team is more like a family, always ready to welcome you with a smile.
+            
+            Innovation Meets Tradition
+            While we cherish our roots and traditional recipes, we also love to innovate. Our menu features a delightful mix of classic favorites and creative new flavors, inspired by global culinary trends. From our signature Margherita to our bold BBQ Chicken Pizza, there's something for every palate. We also offer a range of gluten-free, vegetarian, and vegan options, because we believe everyone should enjoy the magic of pizza.
+            
+            Our Commitment to You
+            Pizza Heaven isn't just about food; it's about creating experiences. We're committed to providing exceptional service, fast and reliable delivery, and a menu that's always evolving to delight our customers. Our mission is to make every meal a memorable one, whether you're dining in with us or enjoying a pizza at home.
+            
+            Looking Ahead
+            As we look to the future, we're excited to continue our journey with you. We're constantly exploring new flavors, expanding our delivery areas, and finding ways to give back to our community. Thank you for being a part of our story. We can't wait to share many more delicious moments with you.
+            
+            </p></div>
+        <div class="gallery">
+            <img src="team.jpg" alt="Team">
+            <img src="kitchen.jpg" alt="Kitchen">
+        </div>
+        <div class="testimonials">
+            <p>"Best pizza ever!" - Terbinos Abebe</p>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-categories">
+            <button class="category-btn" onclick="showCategory('pizzas')">Pizzas</button>
+            <button class="category-btn" onclick="showCategory('sides')">Sides</button>
+            <button class="category-btn" onclick="showCategory('desserts')">Desserts</button>
+            <button class="category-btn" onclick="showCategory('drinks')">Drinks</button>
+        </div>
+        
+        <div id="pizzas" class="menu-category active">
+            <div class="item">
+                <img src="margherita.jpg" alt="Margherita Pizza">
+                <h3>Margherita</h3>
+                <p>A classic delight with fresh tomatoes, mozzarella, and basil.</p>
+                <p class="price">$10.99</p>
+            </div>
+            <div class="item">
+                <img src="pepperoni.jpg" alt="Pepperoni Pizza">
+                <h3>Pepperoni</h3>
+                <p>Loaded with pepperoni slices and gooey mozzarella cheese.</p>
+                <p class="price">$12.99</p>
+            </div>
+            <div class="item">
+                <img src="bbq-chicken.jpg" alt="BBQ Chicken Pizza">
+                <h3>BBQ Chicken</h3>
+                <p>Grilled chicken, BBQ sauce, red onions, and cilantro.</p>
+                <p class="price">$13.99</p>
+            </div>
+            <div class="item">
+                <img src="veggie.jpg" alt="Veggie Pizza">
+                <h3>Veggie</h3>
+                <p>A colorful mix of bell peppers, onions, olives, and mushrooms.</p>
+                <p class="price">$11.99</p>
+            </div>
+        </div>
+    
+        <div id="sides" class="menu-category">
+            <div class="item">
+                <img src="garlic-bread.jpg" alt="Garlic Bread">
+                <h3>Garlic Bread</h3>
+                <p>Toasted bread with garlic butter and parsley.</p>
+                <p class="price">$4.99</p>
+            </div>
+            <div class="item">
+                <img src="mozzarella-sticks.jpg" alt="Mozzarella Sticks">
+                <h3>Mozzarella Sticks</h3>
+                <p>Crispy on the outside, gooey on the inside, served with marinara sauce.</p>
+                <p class="price">$6.99</p>
+            </div>
+        </div>
+    
+        <div id="desserts" class="menu-category">
+            <div class="item">
+                <img src="chocolate-cake.jpg" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p>Rich and moist chocolate cake with a creamy frosting.</p>
+                <p class="price">$5.99</p>
+            </div>
+            <div class="item">
+                <img src="tiramisu.jpg" alt="Tiramisu">
+                <h3>Tiramisu</h3>
+                <p>A classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese.</p>
+                <p class="price">$6.99</p>
+            </div>
+        </div>
+    
+        <div id="drinks" class="menu-category">
+            <div class="item">
+                <img src="cola.jpg" alt="Cola">
+                <h3>Cola</h3>
+                <p>Refreshing cola drink, available in cans and bottles.</p>
+                <p class="price">$1.99</p>
+            </div>
+            <div class="item">
+                <img src="lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Freshly squeezed lemonade with a hint of mint.</p>
+                <p class="price">$2.99</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function showCategory(category) {
+            const categories = document.querySelectorAll('.menu-category');
+            categories.forEach(cat => cat.classList.remove('active'));
+    
+            const activeCategory = document.getElementById(category);
+            activeCategory.classList.add('active');
+        }
+    </script>
+    
+            <!-- Add more items as needed -->
+        </div class="lll">
+    </section>
+  <div>
+    <section class="special-offers">
+        <h2>Special Offers</h2>
+        <p>Check out our latest promotions...</p>
+    </section>
+
+    <section class="ordering-process">
+        <h2>How to Order</h2>
+        <div class="steps">
+            <div class="step">
+                <img src="choose.jpg" alt="Choose">
+                <p>Choose Your Pizza</p>
+            </div>
+            <div class="step">
+                <img src="customize.jpg" alt="Customize">
+                <p>Customize</p>
+            </div>
+            <div class="step">
+                <img src="checkout.jpg" alt="Checkout">
+                <p>Checkout</p>
+            </div>
+        </div>
+    </section>
+</div>
+    
+        <section class="delivery-info">
+            <h2>Delivery Information</h2>
+            <div class="info">
+                <p><strong>Delivery Hours:</strong> Monday-Sunday, 11:00 AM - 10:00 PM</p>
+                <p><strong>Delivery Area:</strong> We deliver within a 10-mile radius.</p>
+                <p><strong>Delivery Charges:</strong> Free delivery on orders over $20. $3 delivery fee otherwise.</p>
+                <p><strong>Order Tracking:</strong> Track your order status online or via our mobile app.</p>
+            </div>
+        </section>
+        
+       
+        <p>Contact us at: +251 912345678</p>
+    </section>
+
+    <footer>
+        <div class="quick-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About Us</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <div class="newsletter">
+            <p>Sign up for our newsletter...</p>
+            <form>
+                <input type="email" placeholder="Your email">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </footer>
+    <script>
+        // Function to open the modal
+        function openModal() {
+            document.getElementById('comingSoonModal').style.display = 'flex';
+        }
+    
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('comingSoonModal').style.display = 'none';
+        }
+    
+        // Add event listener to the "Order Now" button
+        document.getElementById('orderNow').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            openModal(); // Show the modal
+        });
+    </script>
+    
+
+    
+
+</body>
+</html>
